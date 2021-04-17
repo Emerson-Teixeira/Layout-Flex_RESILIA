@@ -2,107 +2,233 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height:1.428em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
-body{
-    min-width: 320px;
+html{
+    min-width: 250px ;
 }
-a {
-    display: block;
-    margin: 0 10px;
-    text-decoration: none;
-}
-#container{
-    padding: 20px;
-}
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    background: rgb(231, 228, 228);
-    padding: 0 30px;
-    flex-flow: row nowrap;
-}
-header div#logo{
-}
-header div#logo span{
-    color: rgb(54, 54, 54);
-}
-header nav#navegacao{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    height: 30px;
-    width: 400px;
-    flex-shrink: 0;
-    flex-grow: 0;
-}
-ul{
-    list-style: none;
-}
-.dropmenu{
-    display: block;
-    position: relative;
-    width: 110px;
-    height: 100%;
-}
-.dropmenu li{
-    padding-top: 7px;
-    text-align: center;
-    width: 100%;
-}
-.dropmenu li ul{
-    width: 100%;
-    display: none;
-    background: rgb(231, 228, 228);
-}
-.dropmenu li ul li{
-    margin: 5px 0;
-}
-.dropmenu li:hover ul {
-    display: block;
-}
-.dropmenu li:hover ul li {
-    text-align: center;
-    display: block;
+@media(max-width:576px){
+    header{
+        width: 100%;
+        height: 60px;
+        background-color: rgb(200, 200, 200);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div#logo span{
+        font-size: 1.5rem;
+    }
+
+    nav#navegacao{
+        display: none;
+    }
+
+    div#container{
+        flex: 1;
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+    }
+
+    div#cardContainer{
+        height: 100vh;
+        max-height: 650px;
+        width: 100%;
+        padding-bottom: 10px;
+        border-bottom:  1.4px solid #888;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-flow: column nowrap;
+        flex-shrink: 1;
+    }
+    div.card{
+        width: 97%;
+        height: 180px;
+        border:1.3px solid rgb(200, 200, 200) ;
+        border-top-right-radius: 5px ;
+        border-bottom-right-radius: 5px ;
+        margin: 5px 0px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-flow: row nowrap;
+    }
+
+    div.card img{
+        display: block;
+        width: 35%;
+        height: 100%;
+        background-color: gray;
+    }
+
+    div.card div.cardDescription{
+        padding: 5px;
+        width: 65%;
+        height: 100%;;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+    }
+
+    div.card div.cardDescription h1{
+        display: block;
+        font-weight: 500;
+        font-size: 1.09rem;
+    }
+    div.card div.cardDescription p{
+        display: block;
+        text-align: justify;
+        overflow-x: hidden;
+        margin: 5px 0px;
+    }
+    div.card div.cardDescription span{
+        display: block;
+        font-size: 0.9rem;
+        text-align: justify;
+        color: #999;
+    }
+
+    div#contentContainer{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-flow: column nowrap;
+    }
+
+    div#formContainer {
+        height: 100vh;
+        max-height: 650px;
+        width: 100%;
+        border-bottom: 1.4px solid #888;
+        margin-bottom: 15px;
+    }
+
+    div#formContainer form{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-flow: column nowrap;
+    }
+
+    div#formContainer form h1{
+        font-size: 2.5rem;
+        font-weight: 400;
+       margin-top: 20px;
+       margin-bottom: 10px;
+    }
+
+    div#formContainer form input, div#formContainer form select {
+        width: 100%;
+        margin-bottom: 35px ;
+        height: 40px;
+        border-radius: 5px;
+        border:1px solid rgb(216, 212, 212);
+        padding: 0 5px;
+    }
+
+    div#formContainer label{
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding-left: 3px;
+    }
+
+    div#formContainer textarea{
+        width: 100%;
+        max-width: 95vw;
+        max-height: 90px;
+        border-radius: 5px;
+        margin-bottom: 35px;
+        padding: 5px 10px;
+        text-align: justify;
+        border:1px solid rgb(216, 212, 212);
+    }
+
+    div#formContainer form button{
+        align-self: flex-end;
+        height: 40px;
+        border: none;
+        background-color: #1c945c;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+        display: block;
+    }
+
+    select option[data-default] {
+        color: #888;
+    }
+
+    
+    div#picContainer{
+        width: 100%;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-flow: column nowrap;
+        flex-shrink: 1;
+        border:1px solid rgb(54, 54, 54);
+        background-color: rgb(211, 209, 209);
+        padding-top: 15px;
+
+    }
+
+    div#picContainer figure{
+        display: block;
+        width: 80%;
+        margin: 15px;
+    }
+    div#picContainer figure img{
+        display: block;
+        width: 100%;
+    }
+    div#picContainer figure figcaption{
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    footer{
+        width: 100%;
+        height: 60px;
+        margin-top: 15px;
+        background-color: rgb(95, 95, 95);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    div#logoFooter span{
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
 
 }
-.dropmenu li:hover ul li:hover {
-    background-color: #f18959;
+
+
+
+
+@media(min-width:577px) and (max-width: 767px){
+
 }
 
-div#cardContainer{
-    width: 100%;
-    border-bottom: 2px solid rgb(54, 54, 54);
-    border-radius: 2px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-    flex-flow: row wrap;
+@media(min-width:768px) and (max-width: 991px){
+
 }
-div.card{
-    min-width: 300px;
-    max-width: 500px;
-    width: 650px;
-    border: 1px solid black;
-    margin: 10px;
-    height:230px ;
-    display: flex;
-    flex-flow: row nowrap;
-}
-div.card img{
-    width: 35%;
-    height: 100%;
-    display: block;
-}
-div.card div#cardDescription{
-    display: flex;
-    flex-flow: column nowrap;
-    width: 60%;
-    height: 100%;
-    padding: 10px 5px;
+
+@media(min-width:992px){
+
 }
